@@ -11,11 +11,11 @@ class SuggestionsList extends Component{
     ItemSeparator = () => <Separator />
     renderItem = ({item}) => {
         return(
-                <Suggestions {...item}
+                <Suggestions
                 llave={item.id}
                 title={item.title}
                 synopsis={item.description_full}
-                img={item.background_image}
+                img={item.medium_cover_image}
                 year={item.year}
             />
         )
