@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 
 export default function Suggestions(props){
     return(
-        <View style={Styles.container}>
+        <View style={Styles.container} key={props.id}>
             <View style={Styles.left}>
                 <Image
                     style={Styles.cover}
@@ -12,7 +12,8 @@ export default function Suggestions(props){
             </View>
             <View style={Styles.right}>
                 <Text style={Styles.title}>{props.title}</Text>
-                <Text style={Styles.year}>2007</Text>
+                <Text style={Styles.despc}>{props.synopsis}</Text>
+                <Text style={Styles.year}>{props.year}</Text>
                 <Text style={Styles.rating}>{props.llave}</Text>
             </View>
         </View>
@@ -20,50 +21,47 @@ export default function Suggestions(props){
 }
 const Styles = StyleSheet.create({
     container: {
-      flexDirection: 'row',
-        backgroundColor: '#F2F2F2',
-        borderRadius: 10,
-        marginHorizontal: 10,
-        marginBottom: 10,
+       flexDirection: 'row',
+        backgroundColor: '#fff',
+        borderRadius: 20,
+        marginHorizontal: 15,
+        marginTop: 7,
         flex: 1,
         padding: 10,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 7,
+            height: 1,
         },
-        shadowOpacity: 0.21,
-        shadowRadius: 4.11,
-        
+        shadowOpacity: 0.109,
+        shadowRadius: 10,
+
         elevation: 1,
     },
-
-    genre: {
-     
-    },
-    genreText: {
-      
-  
+    despc:{
+        height:  50
     },
     cover: {
-      height: 100,
+      height: 115,
       width: 160,
       resizeMode: 'cover',
-      marginRight: 8,
-      borderRadius: 10
+      marginRight: 20,
+      borderRadius: 20
     },
     left: {
         flex: 1,
     },
     right: {
-        flex: 1,
+      flex: 1,
       paddingLeft: 10,
       justifyContent: 'space-between',
 
     },
     title: {
       fontSize: 18,
-      color: '#44546b'
+      color: '#44546b',
+      fontWeight: '500',
+      marginBottom: 5
     },
     year: {
         backgroundColor: '#70b124',

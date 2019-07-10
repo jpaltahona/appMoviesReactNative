@@ -8,20 +8,36 @@ import Api from './utils/api';
 
 export default class App extends Component {
 
-  componentDidMount(){
-    Api.getSuggestion(20);
+  constructor(props){
+    super();
+    this.state = {
+      suggestionsList: []
+    }
+  }
+  async componentDidMount(){
+    const movies = await Api.getSuggestion(20);
+    console.log(movies)
+    this.setState({
+      suggestionsList: movies.movies 
+    })
   }
   render(){
     return (
-      <View>
+      <View style={styles.app}>
         <Home>
           <Header>
               <Text>hola que ahces</Text>
           </Header>
+          <View style={styles.top}>
+            <Text style={styles.texto}>buscador</Text>
+            <Text style={styles.texto}>Categorias</Text>
+          </View>
           
-          <Text style={styles.texto}>buscador</Text>
-          <Text style={styles.texto}>Categorias</Text>
-          <SuggestionsList />
+          <View style={styles.contensu}>
+              <SuggestionsList
+                list={this.state.suggestionsList}
+              />
+          </View>
         </Home>
       </View>
     );
@@ -31,5 +47,23 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   texto: {
     color: '#000'
+  },
+  app: {
+    flex:1,
+    backgroundColor: '#382386'
+  },
+  contensu: {
+    flex: 7,
+    borderTopRightRadius: 15,
+    borderTopLeftRadius: 15,
+    backgroundColor: '#fff',
+    marginTop: 20
+  },
+  top:{
+    flex: 1,
+    backgroundColor: '#fff',
+    borderRadius: 15,
+    padding: 10
   }
+
 });

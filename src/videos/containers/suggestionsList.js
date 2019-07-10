@@ -12,31 +12,20 @@ class SuggestionsList extends Component{
     renderItem = ({item}) => {
         return(
                 <Suggestions {...item}
-                llave={item.key}
+                llave={item.id}
                 title={item.title}
+                synopsis={item.description_full}
+                img={item.background_image}
+                year={item.year}
             />
         )
     }
 
     render(){
-        const list = [
-            {
-                key: '1',
-                title: 'Avengers',
-                img: 'https://u01.appmifile.com/images/2019/04/21/bb19a0d7-155c-4136-8560-a93933d4440a.png'
-
-            },
-            {
-               key: '2',
-               title: 'Capitana marvel',
-               img: 'https://u01.appmifile.com/images/2019/04/21/bb19a0d7-155c-4136-8560-a93933d4440a.png'
-            }
-            
-        ]
         return(
             <SuggestionsListLayout title="Recomendados para ti">
                 <FlatList 
-                    data={list}
+                    data={this.props.list}
                     ListEmptyComponent={this.renderEmtpy}
                     ItemSeparatorComponent={this.ItemSeparator}
                     renderItem={this.renderItem}
