@@ -16,7 +16,6 @@ export default class App extends Component {
           
           <Text style={styles.texto}>buscador</Text>
           <Text style={styles.texto}>Categorias</Text>
-          <Text style={styles.texto}>Sugerencias</Text>
           <SuggestionsList />
         </Home>
       </View>
