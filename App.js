@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Image, Platform } from 'react-native';
 import Home from './src/screens/containers/home';
 import Header from './src/sections/components/Header';
 import SuggestionsList from './src/videos/containers/suggestionsList';
+import CategoriesList from './src/videos/containers/categoriesList';
+
 import Api from './utils/api';
 
 export default class App extends Component {
@@ -11,14 +13,17 @@ export default class App extends Component {
   constructor(props){
     super();
     this.state = {
-      suggestionsList: []
+      suggestionsList: [],
+      categories: []
     }
   }
   async componentDidMount(){
     const movies = await Api.getSuggestion(20);
-    console.log(movies)
+    const categorias = await Api.getmovies();
+    console.log(categorias.movies)
     this.setState({
-      suggestionsList: movies.movies 
+      suggestionsList: movies.movies,
+      categories: categorias.movies
     })
   }
   render(){
@@ -30,7 +35,9 @@ export default class App extends Component {
           </Header>
           <View style={styles.top}>
             <Text style={styles.texto}>buscador</Text>
-            <Text style={styles.texto}>Categorias</Text>
+            <View>
+                <CategoriesList categories={this.state.categories}/>
+            </View>
           </View>
           
           <View style={styles.contensu}>

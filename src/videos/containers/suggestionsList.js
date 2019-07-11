@@ -9,9 +9,11 @@ import Suggestions from '../components/Suggestions';
 class SuggestionsList extends Component{
     renderEmtpy = () => <Empty text="no hay sugerencias"/>
     ItemSeparator = () => <Separator />
+
+    keyextractor = item => item.id.toString();
     renderItem = ({item}) => {
         return(
-                <Suggestions
+            <Suggestions
                 llave={item.id}
                 title={item.title}
                 synopsis={item.description_full}
@@ -24,7 +26,8 @@ class SuggestionsList extends Component{
     render(){
         return(
             <SuggestionsListLayout title="Recomendados para ti">
-                <FlatList 
+                <FlatList
+                    keyExtractor={this.keyextractor}
                     data={this.props.list}
                     ListEmptyComponent={this.renderEmtpy}
                     ItemSeparatorComponent={this.ItemSeparator}

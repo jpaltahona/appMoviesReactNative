@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 
 export default function Suggestions(props){
     return(
-        <View style={Styles.container} key={props.id}>
+        <View style={Styles.container}>
             <View style={Styles.left}>
                 <Image
                     style={Styles.cover}
