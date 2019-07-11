@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image , ImageBackground } from 'react-native';
 
 export default function Suggestions(props){
     return(
-        <View style={Styles.container}>
+        <View style={Styles.container} key={props.id}>
             <View style={Styles.left}>
                 <Image
                     style={Styles.cover}
@@ -42,17 +42,17 @@ const Styles = StyleSheet.create({
         height:  50
     },
     cover: {
-      height: 115,
-      width: 160,
+      height: '100%',
+      width: 80,
       resizeMode: 'cover',
       marginRight: 20,
-      borderRadius: 20
+      borderRadius: 10
     },
     left: {
         flex: 1,
     },
     right: {
-      flex: 1,
+      flex: 3,
       paddingLeft: 10,
       justifyContent: 'space-between',
 

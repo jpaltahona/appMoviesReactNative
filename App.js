@@ -5,6 +5,7 @@ import Home from './src/screens/containers/home';
 import Header from './src/sections/components/Header';
 import SuggestionsList from './src/videos/containers/suggestionsList';
 import CategoriesList from './src/videos/containers/categoriesList';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import Api from './utils/api';
 
@@ -28,16 +29,18 @@ export default class App extends Component {
   }
   render(){
     return (
-      <View style={styles.app}>
+      <View>
+        <LinearGradient
+          colors={[ '#1285EB', '#00F9EF']}
+          >
+
         <Home>
           <Header>
               <Text>hola que ahces</Text>
           </Header>
+          <Text style={styles.texto}>buscador</Text>
           <View style={styles.top}>
-            <Text style={styles.texto}>buscador</Text>
-            <View>
                 <CategoriesList categories={this.state.categories}/>
-            </View>
           </View>
           
           <View style={styles.contensu}>
@@ -46,6 +49,8 @@ export default class App extends Component {
               />
           </View>
         </Home>
+
+          </LinearGradient>
       </View>
     );
   }
@@ -57,20 +62,19 @@ const styles = StyleSheet.create({
   },
   app: {
     flex:1,
-    backgroundColor: '#382386'
+    
   },
   contensu: {
-    flex: 7,
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
     backgroundColor: '#fff',
     marginTop: 20
   },
   top:{
-    flex: 1,
     backgroundColor: '#fff',
     borderRadius: 15,
-    padding: 10
+    padding: 10,
+   
   }
 
 });
