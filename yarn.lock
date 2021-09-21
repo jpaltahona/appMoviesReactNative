@@ -2160,7 +2160,7 @@ expo-keep-awake@~5.0.1:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-5.0.1.tgz#15aeffd9de673f7eaf145449883e8d83f7d7a799"
   integrity sha512-DPWAqgxbmLyJoCXPbDXbj+1XFjP/ulv4AYzvi1a+jsvZRU2uiFdho0w269Y++DLCQf30vbuu3zs5HiaJGU43fA==
 
-expo-linear-gradient@~5.0.1:
+expo-linear-gradient@^5.0.1, expo-linear-gradient@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-5.0.1.tgz#b4f5450d680b9315f22f4f99fee6a2b90fb49d92"
   integrity sha512-5dKn9JIXmXXHq6itC/Jpqo65Tkgjwacyw1kpD8sekoFTEVfT6ciFd2djqIcciUqIa57FF/5d2q54mUvjoqD/TA==
@@ -5301,9 +5301,9 @@ tmp@^0.0.33:
     os-tmpdir "~1.0.2"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
-  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
